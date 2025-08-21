@@ -7,9 +7,9 @@
 #define SS_PIN D2
 #define RST_PIN D1
 
-const char* ssid = "iPhone";         // Replace with your Wi-Fi SSID
-const char* password = "Abhignan";   // Replace with your Wi-Fi password
-const String scriptURL = "https://script.google.com/macros/s/AKfycbzpOXBuuCagVX53zEv0YnvVHZGN6JG0jwjuIe6eL0ssSBM_VfQdmy3Sh3-i5w2rrxf-/exec";
+const char* ssid = "SSID";         // Replace with your Wi-Fi SSID
+const char* password = "PASSWORD";   // Replace with your Wi-Fi password
+const String scriptURL = "ScriptUrl";
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
@@ -72,3 +72,4 @@ void loop() {
   mfrc522.PCD_StopCrypto1();
   delay(2000);
 }
+
