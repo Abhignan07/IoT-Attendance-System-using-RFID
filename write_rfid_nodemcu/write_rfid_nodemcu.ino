@@ -17,7 +17,7 @@ void loop() {
   for (byte i = 0; i < 6; i++) key.keyByte[i] = 0xFF;
 
   byte block = 4;
-  byte dataBlock[16] = {'B','2','0','1','6','3','8',' ',' ',' ',' ',' ',' ',' ',' ',' '};
+  byte dataBlock[16] = {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '};    //replace the empty spaces with letters that needed to be written into RFID
 
   if (mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, block, &key, &(mfrc522.uid)) == MFRC522::STATUS_OK) {
     mfrc522.MIFARE_Write(block, dataBlock, 16);
@@ -26,4 +26,5 @@ void loop() {
   mfrc522.PICC_HaltA();
   mfrc522.PCD_StopCrypto1();
   delay(2000);
+
 }
